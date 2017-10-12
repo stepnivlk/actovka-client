@@ -1,10 +1,11 @@
 import thunk from 'redux-thunk';
 import { applyMiddleware, createStore, compose } from 'redux';
 import CurrentUser from './models/CurrentUser';
+import Login from './models/Login';
 import rootReducer from './rootReducer';
 
 const initialState = {
-  currentUser: new CurrentUser,
+  login: new Login,
 };
 
 const composeEnhancers = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);

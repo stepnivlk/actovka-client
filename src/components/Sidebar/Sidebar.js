@@ -12,18 +12,22 @@ import AccountBalance from 'material-ui/svg-icons/action/account-balance';
 
 const forceNavDown = {'top': '64px'}
 
-const Sidebar = () => (
-  <Drawer width={60} open={true} containerStyle={forceNavDown}>
-    <MenuItem leftIcon={<School />}>
-      &nbsp;
-    </MenuItem>
-    <MenuItem leftIcon={<EventNote />}>
-      &nbsp;
-    </MenuItem>
-    <MenuItem leftIcon={<People />}>
-      &nbsp;
-    </MenuItem>
-  </Drawer>
-)
+const Sidebar = ({ isAuthenticated }) => {
+  if (!isAuthenticated) { return null };
+
+  return (
+    <Drawer width={60} open={true} containerStyle={forceNavDown}>
+      <MenuItem leftIcon={<School />}>
+        &nbsp;
+      </MenuItem>
+      <MenuItem leftIcon={<EventNote />}>
+        &nbsp;
+      </MenuItem>
+      <MenuItem leftIcon={<People />}>
+        &nbsp;
+      </MenuItem>
+    </Drawer>
+  );
+}
 
 export default Sidebar;

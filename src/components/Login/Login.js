@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
-const Login = () => (
+const Login = ({ email, password, onEmailChange, onPasswordChange, onSubmit }) => (
   <div className='row align-items-center justify-content-md-center'>
     <div className='col col-md-4'></div>
     <div className='col col-md-4'>
@@ -16,15 +16,24 @@ const Login = () => (
           <TextField
             hintText="Email Field"
             floatingLabelText="Email"
+            value={email}
+            onChange={(e, newValue) => onEmailChange(newValue)}
+            errorText='Invalid'
           />
           <TextField
             hintText="Password Field"
             floatingLabelText="Password"
             type="password"
+            value={password}
+            onChange={(e, newValue) => onPasswordChange(newValue)}
+            errorText=''
           />
         </CardText>
         <CardActions>
-          <FlatButton label="Login" />
+          <FlatButton
+          label="Login"
+          onClick={() => onSubmit()}
+          />
         </CardActions>
       </Card>
     </div>
