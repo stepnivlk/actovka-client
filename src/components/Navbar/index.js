@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
 import { isAuthenticatedMapper } from '../../data/stateMappers';
-import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
-export default connect(isAuthenticatedMapper)(Sidebar);
+export default connect(isAuthenticatedMapper)(Navbar);

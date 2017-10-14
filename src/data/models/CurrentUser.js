@@ -5,7 +5,8 @@ const currentUserObject = {
   email: '',
   firstName: '',
   lastName: '',
-  role: '',
+  role: null,
+  token: null,
   isAuthenticated: false,
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Login from './Login';
-import login from '../../data/features/login/actions/login'
+import login from '../../data/features/login/actions/login';
 
 class LoginContainer extends Component {
   constructor(props) {
@@ -14,9 +14,10 @@ class LoginContainer extends Component {
   }
 
   handleSubmit = () => {
-    const { email, password } = this.state
-    this.props.dispatch(login({ email, password }))
-    console.log(email, password)
+    const { email, password } = this.state;
+    const { dispatch } = this.props;
+
+    dispatch(login({ email, password }));
   }
 
   handleEmailChange = (email) => this.setState(() => ({ email }))

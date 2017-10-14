@@ -12,14 +12,10 @@ import {
 } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 
 import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
-
+import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 
@@ -32,10 +28,7 @@ class App extends Component {
         <Router>
           <MuiThemeProvider>
             <div>
-              <AppBar
-                title="actovka"
-                iconElementRight={<FlatButton label="User" />}
-              />
+              <Navbar />
               <Sidebar />
               <Layout>
                 <Route path='/login' component={Login} />

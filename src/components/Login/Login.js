@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Material UI
 import TextField from 'material-ui/TextField';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
@@ -18,7 +19,7 @@ const Login = ({ email, password, onEmailChange, onPasswordChange, onSubmit }) =
             floatingLabelText="Email"
             value={email}
             onChange={(e, newValue) => onEmailChange(newValue)}
-            errorText='Invalid'
+            errorText=''
           />
           <TextField
             hintText="Password Field"

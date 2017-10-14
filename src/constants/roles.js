@@ -3,6 +3,6 @@ const roles = {
   MANAGER: 'manager',
   LECTOR: 'lector',
   CLIENT: 'client',
-}
+};
 
-export default roles
+export default roles;
