@@ -38,10 +38,6 @@ const MenuWrapper = ({ children, firstName, lastName }) => (
 const menu = ({ firstName, lastName, history, dispatch }) => (
   <MenuWrapper firstName={firstName} lastName={lastName}>
     <MenuItem
-      primaryText="Organisation"
-      onClick={() => history.push(routes.ORGANISATION)}
-    />
-    <MenuItem
       primaryText="Profile"
       onClick={() => history.push(routes.PROFILE)}
     />

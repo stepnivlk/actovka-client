@@ -8,6 +8,7 @@ import School from 'material-ui/svg-icons/social/school';
 import NotificationsActive from 'material-ui/svg-icons/social/notifications-active';
 import People from 'material-ui/svg-icons/social/people';
 import EventNote from 'material-ui/svg-icons/notification/event-note';
+import CommuncationBusiness from 'material-ui/svg-icons/communication/business';
 import AccountBalance from 'material-ui/svg-icons/action/account-balance';
 import { cyan500, blue500, red500, greenA200 } from 'material-ui/styles/colors';
 
@@ -43,6 +44,12 @@ class Sidebar extends Component {
         <MenuItem
           onClick={() => this.handleClick(routes.DASHBOARD)}
           leftIcon={<Dashboard color={this.colorFor(routes.DASHBOARD)} />}
+        >
+          &nbsp;
+        </MenuItem>
+        <MenuItem
+          onClick={() => this.handleClick(routes.ORGANISATION)}
+          leftIcon={<CommuncationBusiness color={this.colorFor(routes.ORGANISATION)} />}
         >
           &nbsp;
         </MenuItem>
