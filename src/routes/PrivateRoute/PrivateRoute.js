@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Cookie from 'js-cookie'
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
+import { common } from '../../constants';
+import { isAuthenticatedMapper } from '../../data/stateMappers';
+import currentUser from '../../data/features/currentUser/actions/currentUser';
+
+const authenticate = ({ isAuthenticated, dispatch }) => {
+  if (isAuthenticated) { return true };
+
+  const token = Cookie.get(common.COOKIE_NAME);
+  if (token) {
+    dispatch(currentUser())
+    return true;
   }
-};
+
+  return false;
+}
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return <Route {...rest} render={props => (
-    rest.isAuthenticated ? (
+    authenticate(rest) ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{
@@ -27,8 +32,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   )}/>
 };
 
-const mapStateToProps = (state) => ({
-  isAuthenticated: state.login.isAuthenticated,
-})
-
-export default connect(mapStateToProps)(PrivateRoute);
+export default connect(isAuthenticatedMapper)(PrivateRoute);

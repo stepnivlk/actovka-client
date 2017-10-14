@@ -1,5 +1,11 @@
 import { connect } from 'react-redux';
-import { isAuthenticatedMapper } from '../../data/stateMappers';
 import Navbar from './Navbar';
 
-export default connect(isAuthenticatedMapper)(Navbar);
+const mapStateToProps = ({ currentUser }) => ({
+  isAuthenticated: currentUser.isAuthenticated,
+  firstName: currentUser.firstName,
+  lastName: currentUser.lastName,
+  username: currentUser.username,
+})
+
+export default connect(mapStateToProps)(Navbar);

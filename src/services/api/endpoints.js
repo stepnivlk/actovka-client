@@ -1,5 +1,6 @@
 const endpoints = {
-  login: () => 'user_token',
+  login: () => 'api/v1/auth/sessions',
+  me: () => 'api/v1/users/me',
 };
 
 export default endpoints;

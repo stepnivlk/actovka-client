@@ -1,5 +1,5 @@
 const isAuthenticatedMapper = (state) => ({
-  isAuthenticated: state.login.isAuthenticated,
+  isAuthenticated: state.currentUser.isAuthenticated,
 });
 
 export default isAuthenticatedMapper;

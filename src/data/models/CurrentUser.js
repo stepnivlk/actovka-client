@@ -5,9 +5,12 @@ const currentUserObject = {
   email: '',
   firstName: '',
   lastName: '',
+  username: '',
   role: null,
   token: null,
   isAuthenticated: false,
+  loginError: false,
+  isManager: false,
 }
 
 const CurrentUserRecord = Record(currentUserObject)

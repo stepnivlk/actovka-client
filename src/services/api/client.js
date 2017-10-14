@@ -1,8 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
+import Cookie from 'js-cookie';
+
+import { common } from '../../constants';
 
 const clientHeaders = () => {
-  // const token = Cookie.get('api-token')
-  const token = false
+  const token = Cookie.get(common.COOKIE_NAME);
 
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
@@ -16,7 +18,7 @@ const baseURL = () => {
 
   // return [hostname, process.env.API_BASE_PORT].join(':')
 
-  return 'http://localhost:3004';
+  return 'http://localhost:4000';
 };
 
 const client = axios.create({ baseURL: baseURL() });

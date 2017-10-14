@@ -3,17 +3,17 @@ import React from 'react';
 // Material UI
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 
-const Dashboard = () => (
+const OrganisationContainer = () => (
   <div className='row align-items-center justify-content-md-center'>
     <div className='col col-md-2'></div>
     <div className='col col-md-8'>
       <Card>
         <CardHeader
-          title="Dashboard"
+          title="Organisation"
         />
       </Card>
     </div>
   </div>
 );
 
-export default Dashboard;
+export default OrganisationContainer;
