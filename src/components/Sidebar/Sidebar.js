@@ -10,11 +10,13 @@ import People from 'material-ui/svg-icons/social/people';
 import EventNote from 'material-ui/svg-icons/notification/event-note';
 import CommuncationBusiness from 'material-ui/svg-icons/communication/business';
 import AccountBalance from 'material-ui/svg-icons/action/account-balance';
+import Terrain from 'material-ui/svg-icons/maps/terrain';
+import LineStyle from 'material-ui/svg-icons/action/line-style';
 import { cyan500, blue500, red500, greenA200 } from 'material-ui/styles/colors';
 
 import { routes } from '../../constants';
 
-const forceNavDown = {'top': '64px'}
+const forceNavDown = {'top': '68px', boxShadow: '' }
 
 const colorFor = (route) => {
   return route === window.location.pathname ? cyan500 : null;
@@ -40,34 +42,46 @@ class Sidebar extends Component {
     if (!isAuthenticated) { return null };
 
     return (
-      <Drawer width={60} open={true} containerStyle={forceNavDown}>
+      <Drawer width={160} open={true} containerStyle={forceNavDown}>
         <MenuItem
           onClick={() => this.handleClick(routes.DASHBOARD)}
           leftIcon={<Dashboard color={this.colorFor(routes.DASHBOARD)} />}
+          innerDivStyle={{ paddingLeft: 50 }}
+          focusState='focused'
         >
-          &nbsp;
+          Dashboard
+        </MenuItem>
+        <MenuItem
+          innerDivStyle={{ paddingLeft: 50 }}
+          leftIcon={<LineStyle />}
+        >
+          Timetable
+        </MenuItem>
+        <MenuItem
+          innerDivStyle={{ paddingLeft: 50 }}
+          leftIcon={<Terrain />}
+        >
+          Activities
         </MenuItem>
         <MenuItem
           onClick={() => this.handleClick(routes.ORGANISATION)}
+          innerDivStyle={{ paddingLeft: 50 }}
           leftIcon={<CommuncationBusiness color={this.colorFor(routes.ORGANISATION)} />}
         >
-          &nbsp;
+          Organisation
         </MenuItem>
         <MenuItem
           onClick={() => this.handleClick(routes.CLIENTS)}
           leftIcon={<People color={this.colorFor(routes.CLIENTS)} />}
+          innerDivStyle={{ paddingLeft: 50 }}
         >
-          &nbsp;
+          Clients
         </MenuItem>
         <MenuItem
           leftIcon={<School />}
+          innerDivStyle={{ paddingLeft: 50 }}
         >
-          &nbsp;
-        </MenuItem>
-        <MenuItem
-          leftIcon={<EventNote />}
-        >
-          &nbsp;
+          Lectors
         </MenuItem>
       </Drawer>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
+import { List, ListItem } from 'material-ui/List';
 import CommunicationCall from 'material-ui/svg-icons/communication/call';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import { grey500, indigo500 } from 'material-ui/styles/colors';
@@ -15,6 +15,8 @@ import CommuncationBusiness from 'material-ui/svg-icons/communication/business';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
+
+import Basic from './components/Basic'
 
 const iconButtonElement = (
   <IconButton>
@@ -36,33 +38,13 @@ const styles = {
   },
 }
 
-const Info = () => (
+const Info = ({ organisation, handleEditClick }) => (
   <Card>
     <CardText>
-      <div className='row'>
-        <div className='col col-md-6'>
-          <List>
-            <ListItem
-              leftIcon={<CommuncationBusiness color={indigo500} />}
-              rightIconButton={rightIconMenu}
-              primaryText="ZS Livingston s.r.o."
-              secondaryText="Name"
-              disabled
-            />
-          </List>
-        </div>
-        <div className='col col-md-6'>
-          <List>
-          <ListItem
-            leftIcon={<SvgIconFace />}
-            rightIconButton={rightIconMenu}
-            primaryText="Tomas Koutsky"
-            secondaryText="Manager"
-            disabled
-          />
-        </List>
-        </div>
-      </div>
+      <Basic
+        name={organisation.name}
+        handleEditClick={handleEditClick}
+      />
       <hr />
       Contacts
       <div className='row'>

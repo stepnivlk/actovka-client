@@ -15,7 +15,13 @@ const postRequest = (resources, urlArguments, params = {}) => {
   return client.post(url, { headers: clientHeaders(), ...params });
 };
 
+const patchRequest = (resources, urlArguments, params = {}) => {
+  const url = endpoints[resources](...urlArguments);
+  return client.patch(url, params, { headers: clientHeaders() });
+};
+
 export {
   getRequest,
   postRequest,
+  patchRequest,
 }

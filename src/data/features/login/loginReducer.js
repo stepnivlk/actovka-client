@@ -22,7 +22,7 @@ const loginReducer = (state = new CurrentUser, action) => {
 
     default:
       return state;
-  }
+  };
 };
 
 export default loginReducer;
