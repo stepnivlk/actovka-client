@@ -1,3 +1,3 @@
-import { getRequest, postRequest } from './common';
+import { getRequest, postRequest, patchRequest } from './common';
 
-export { getRequest, postRequest };
+export { getRequest, postRequest, patchRequest };

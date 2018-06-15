@@ -29,5 +29,5 @@ const login = ({ email, password }) => {
   };
 };
 
-export default login;
 export { LOGIN_SUCCESS, LOGIN_ERROR };
+export default login;

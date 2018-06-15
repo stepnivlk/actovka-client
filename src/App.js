@@ -20,6 +20,7 @@ import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import NotificationBar from './components/NotificationBar';
 
 import Organisation from './routes/Organisation';
 import Profile from './routes/Profile';
@@ -44,6 +45,7 @@ class App extends Component {
                   <PrivateRoute path={routes.CLIENTS} component={Clients}/>
                 </Switch>
               </Layout>
+              <NotificationBar />
             </div>
           </MuiThemeProvider>
         </Router>

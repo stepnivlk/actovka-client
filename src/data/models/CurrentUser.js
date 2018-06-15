@@ -1,4 +1,4 @@
-import { Record } from 'immutable'
+import { Record } from 'immutable';
 
 const currentUserObject = {
   id: null,
@@ -11,10 +11,10 @@ const currentUserObject = {
   isAuthenticated: false,
   loginError: false,
   isManager: false,
-}
+};
 
-const CurrentUserRecord = Record(currentUserObject)
+const CurrentUserRecord = Record(currentUserObject);
 
-class CurrentUser extends CurrentUserRecord {}
+class CurrentUser extends CurrentUserRecord {};
 
-export default CurrentUser
+export default CurrentUser;
